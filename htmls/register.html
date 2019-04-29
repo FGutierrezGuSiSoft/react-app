@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Ingresar</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="login">
+      <div class="card">
+        <header>
+          <h3>Registrarse</h3>
+        </header>
+        <form id="formulario" method="POST" action="/register">
+          <div class="line">
+            <label>Nombre y Apellido</label>
+            <input class="fullWidth textInput" type="text" name="name" />
+          </div>
+
+          <div class="line">
+            <label>Correo</label>
+            <input class="fullWidth textInput" type="email" name="email" />
+          </div>
+
+          <div class="line">
+            <label>Password</label>
+            <input id="password" class="fullWidth textInput" type="password" name="password" minlength="8" maxlength="10" />
+          </div>
+
+          <div class="line">
+            <label>Confirmación de Password</label>
+            <input id="confirmation" class="fullWidth textInput" type="password" name="confirmation"  />
+          </div>
+
+          <div class="line">
+            <label>Navegadores preferidos</label>
+            <select class="fullWidth textInput">
+              <option disabled selected></option>
+              <option>Mozilla Firefox</option>
+              <option>Google Chrome</option>
+              <option>Microsoft Edge</option>
+              <option>Safari</option>
+              <option>Opera</option>
+            </select>
+          </div>
+
+          <div class="line">
+            <label>Informaci&oacute;n adicional</label>
+            <textarea class="fullWidth textInput" rows="5"></textarea>
+          </div>
+
+          <div class="line">
+            <label>Curso</label>
+            <input type="text" class="fullWidth textInput" list="cursos" />
+            <datalist id="cursos">
+              <option>Optativo 1</option>
+              <option>Bases de datos</option>
+              <option>C&aacute;lculo</option>
+            </datalist>
+          </div>
+
+          <div class="line" id="submit">
+            <input type="submit" value="Registarse" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <footer>
+    </footer>
+
+    <script>
+      function confirmar(event){
+        const password = document.getElementById("password");
+        const confirmation = document.getElementById("confirmation");
+
+        if (password.value != confirmation.value) {
+          alert("El password y su confirmación deben ser iguales");
+          event.preventDefault();
+        }
+      }
+
+      const form = document.getElementById("formulario");
+
+      form.addEventListener("submit", confirmar);
+    </script>
+
+  </body>
+</html>

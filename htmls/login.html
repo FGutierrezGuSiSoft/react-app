@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="register">Registrarse</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="login">
+      <div class="card">
+        <header>
+          <h3>Ingreso</h3>
+        </header>
+        <form method="POST" action="/login">
+          <div class="line">
+            <label>Correo</label>
+            <input name="correo" class="fullWidth" type="email" placeholder="ejemplo@gmail.com" />
+          </div>
+
+          <div class="line">
+            <label>Contrase&ntilde;a</label>
+            <input name="contrasena" class="fullWidth" type="password" />
+          </div>
+
+          <div class="line" id="submit">
+            <input type="submit" value="Ingresar" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
